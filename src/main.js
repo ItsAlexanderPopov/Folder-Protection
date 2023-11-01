@@ -14,7 +14,7 @@ const createWindow = () => {
     height: 700,
     resizable:false,
     autoHideMenuBar: true,
-    icon: path.join(__dirname, "../../src/missile.ico"),
+    icon: path.join(__dirname, "../../src/favicon.ico"),
     show: false,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
