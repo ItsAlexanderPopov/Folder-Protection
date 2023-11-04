@@ -52,26 +52,26 @@ function App() {
       <p style={{textAlign:'center', display:'inline-block'}}>
         <span>{"< Password Hint: "}<span>{passwordHint}</span>{' >'}</span><br/>
       </p>
-      <div className='msg-div' style={ message === "." ? {opacity: 0} : {opacity: 1}}>
-       <p 
-        className='message' 
-        style={ message === "Success" ? {borderColor:'#00FF00'}: {color:'#FF0000'} }
-       >
-        {message}
-        </p>
-      </div>
-      <div className='open-div'>
-        <button 
-            type='button' 
-            className='btn-open' 
-            disabled={lock} 
-            style={message === 'Success' ? {opacity: 1}: {}} 
-            onClick={handleSubmit}
+        <div className='msg-div' style={ message === "." ? {opacity: 0} : {opacity: 1}}>
+        <p 
+          className='message' 
+          style={ message === "Success" ? {borderColor:'#00FF00'}: {color:'#FF0000'} }
         >
-          Open Folder
-        </button>
-      </div>
-      <p className='password-input'> Password Input: <span className="password-digits"> {passwordInput} </span></p>
+          {message}
+          </p>
+        </div>
+        <div className='open-div'>
+          <button 
+              type='button' 
+              className='btn-open' 
+              disabled={lock} 
+              style={message === 'Success' ? {opacity: 1}: {}} 
+              onClick={handleSubmit}
+          >
+            Open Folder
+          </button>
+        </div>
+        <p className='password-input'> Password Input: <span className="password-digits"> {passwordInput} </span></p>
       <Numpad
         handleInput={handleInput}
         handleDelete={handleDelete}
