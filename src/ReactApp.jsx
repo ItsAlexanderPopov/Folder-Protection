@@ -14,7 +14,7 @@ function App() {
       setPasswordInput(passwordInput + n);
     }
   }
-  
+
   const handleDelete = () => {
     setPasswordInput(passwordInput.slice(0, -1))
   } 
@@ -33,26 +33,17 @@ function App() {
     setPasswordInput("")
   } 
 
-  const handleKeyPress = (event) => {
-    const key = event.key;
-    if (event.code === 'KeyP' && event.ctrlKey === true && event.altKey === true) {
-      setMessage('Success');
-      setLock(false);
-    } else if (event.code === 'KeyL' && event.ctrlKey === true && event.altKey === true) {
-      setMessage('.');
-      setPasswordInput('');
-      setLock(true);
-    }
-  };
-
   useEffect(() => {
   window.api.lockAPI(lock) 
   },[lock])
 
   useEffect(() => {
-    document.addEventListener('keydown', handleKeyPress);
+    const disableKeyboardInput = (event) => {
+      event.preventDefault();
+    };
+    document.addEventListener('keydown', disableKeyboardInput);
     return () => {
-      document.removeEventListener('keydown', handleKeyPress);
+      document.removeEventListener('keydown', disableKeyboardInput);
     };
   }, []);
 

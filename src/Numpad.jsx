@@ -4,7 +4,7 @@ import { RxEnter } from 'react-icons/rx'
 
 const Numpad = ({handleInput, handleDelete, handleSubmit, playSound}) => {
   return (
-        <div className='numpad'>
+    <div className='numpad'>
         <div>
             <button type="button" onClick={handleInput.bind(null, 1)}>
                 1
